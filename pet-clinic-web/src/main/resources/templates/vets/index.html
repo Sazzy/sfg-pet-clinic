@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'vets')}">
 <head>
     <meta charset="UTF-8">
     <title>List of vets</title>
 </head>
 <body>
-<h1 th:text="'List of vets'">List of vets...</h1>
+<h2 th:text="#{vetsTitle}">Vets</h2>
 <!--/*@thymesVar id="owner" type="guru.springframework.sfgpetclinic.model.Vet"*/-->
-<table>
+<table id="ownersTable" class="table table-striped">
     <thead>
     <tr>
-        <th>Id</th>
-        <th>First name</th>
-        <th>Last name</th>
+        <th style="width: 20px;">Id</th>
+        <th style="width: 100px;">First name</th>
+        <th style="width: 100px;">Last name</th>
     </tr>
     </thead>
     <tbody>
@@ -23,7 +23,5 @@
     </tr>
     </tbody>
 </table>
-
-
 </body>
 </html>
