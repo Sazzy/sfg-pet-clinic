@@ -3,7 +3,7 @@ package guru.springframework.sfgpetclinic.bootstrap;
 import guru.springframework.sfgpetclinic.model.*;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import guru.springframework.sfgpetclinic.services.PetTypeService;
-import guru.springframework.sfgpetclinic.services.SpecialtyService;
+import guru.springframework.sfgpetclinic.services.SpecialtyTypeService;
 import guru.springframework.sfgpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -15,16 +15,16 @@ public class DataLoader implements CommandLineRunner {
 	private final OwnerService ownerService;
 	private final VetService vetService;
 	private final PetTypeService petTypeService;
-	private final SpecialtyService specialtyService;
+	private final SpecialtyTypeService specialtyTypeService;
 
 	public DataLoader(OwnerService ownerService,
 					  VetService vetService,
 					  PetTypeService petTypeService,
-					  SpecialtyService specialtyService) {
+					  SpecialtyTypeService specialtyTypeService) {
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		this.petTypeService = petTypeService;
-		this.specialtyService = specialtyService;
+		this.specialtyTypeService = specialtyTypeService;
 	}
 
 	@Override
@@ -48,15 +48,15 @@ public class DataLoader implements CommandLineRunner {
 
 		SpecialtyType radiology = new SpecialtyType();
 		radiology.setDescription("Radiology");
-		SpecialtyType savedRadiology = specialtyService.save(radiology);
+		SpecialtyType savedRadiology = specialtyTypeService.save(radiology);
 
 		SpecialtyType surgery = new SpecialtyType();
 		surgery.setDescription("Surgery");
-		SpecialtyType savedSurgery = specialtyService.save(surgery);
+		SpecialtyType savedSurgery = specialtyTypeService.save(surgery);
 
 		SpecialtyType dentistry = new SpecialtyType();
 		dentistry.setDescription("Dentistry");
-		SpecialtyType savedDentistry = specialtyService.save(dentistry);
+		SpecialtyType savedDentistry = specialtyTypeService.save(dentistry);
 
 		System.out.println("Loaded specialty types");
 
